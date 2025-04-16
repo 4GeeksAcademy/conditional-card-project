@@ -30,13 +30,16 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   const fullName = `${variables.name || "First Name"} ${variables.lastName ||
     "Last Name"}`;
+  const location = `${variables.city || "city"} ${variables.country ||
+    "country"}`;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${fullName}</h1>
           <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h3>${location}</h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             
