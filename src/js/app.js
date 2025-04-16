@@ -32,20 +32,24 @@ function render(variables = {}) {
     "Last Name"}`;
   const location = `${variables.city || "city"} ${variables.country ||
     "country"}`;
+  const role = variables.role || "Role";
+  const socialMediaPosition =
+    variables.socialMediaPosition === "left"
+      ? "position-left"
+      : "position-right";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${fullName}</h1>
-          <h2>Web Developer</h2>
+          <h2>${role}</h2>
           <h3>${location}</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <ul class="${socialMediaPosition}">
+            ${`<li><a href="https://twitter.com/${variables.twitter}"></a></li>`}
+            ${`<li><a href="https://github.com/${variables.github}"></a></li>`}
+            ${`<li><a href="https://linkedin.com/in/${variables.linkedin}"</a></li>`}
+            ${`<li><a href="https://instagram.com/${variables.instagram}">clas="picker"</a></li>`}
           </ul>
         </div>
     `;
