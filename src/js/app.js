@@ -39,6 +39,9 @@ function render(variables = {}) {
           <h1>${fullName}</h1>
           <h2>${role}</h2>
           <h3>${location}</h3>
+
+          // The problem was that i did not push my last changes, Thank you 
+          
           <ul class="${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/${variables.twitter}"/><i class="fab fa-twitter"></i></li>
            <li><a href="https://github.com/${variables.github}"/><i class="fab fa-github"></i></li>
